@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  font-family: "Ubuntu";
+  color: #f2f2f2;
+
+  background-color: rgba(0, 0, 0, 0.99);
+}
+
+.background-video {
+  max-width: 100%;
+  max-height: 80%;
+
+  position: absolute;
+
+  opacity: 0.01;
+
+  z-index: -1;
+
+  filter: grayscale();
+}
+
+main {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container h1 {
+  font-size: 82px;
+
+  margin-bottom: 25px;
+}
+
+.container a {
+  text-decoration: none;
+
+  color: #f2f2f2;
+
+  padding: 1px 0;
+
+  background-color: rgb(34, 26, 26);
+
+  transition: 0.6s;
+}
+
+.container a:visited {
+  color: #f2f2f2;
+}
+
+.container a:hover {
+  background-color: #f2f2f2;
+
+  color: rgb(34, 26, 26);
+}
+
+.msg-feedback {
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  margin-top: 20px;
+}
+
+.msg-validate {
+  color: #058a12;
+}
+
+.msg-erro {
+  color: #bb1f24;
+}
+
+.msg-validate:before {
+  content: "✔";
+
+  color: #033308;
+
+  padding: 1.5px 2.5px;
+
+  font-size: 10px;
+
+  background-color: #058a12;
+  border: 1.5px solid #058a12;
+  border-radius: 3px;
+
+  margin-right: 6px;
+}
+
+.msg-erro:before {
+  content: "❌";
+
+  padding: 4px;
+
+  font-size: 5px;
+
+  background-color: #bb1f24;
+  border: 1.5px solid #bb1f24;
+  border-radius: 3px;
+
+  margin-right: 6px;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 68px;
+
+  outline: none;
+
+  font-family: "Ubuntu";
+  font-size: 35px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #f2f2f2;
+
+  background-color: transparent;
+
+  border: 1.5px solid #f2f2f2;
+
+  padding-left: 10px;
+
+  margin-top: 25px;
+}
+
+footer {
+  height: 10%;
+}
+
+footer p {
+  color: rgb(15, 14, 14);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+.author {
+  padding: 2px;
+
+  background: rgb(29, 28, 28);
+
+  transition: 0.5s;
+
+  text-decoration: none;
+}
+.author:visited {
+  color: rgb(15, 14, 14);
+  text-decoration: none;
+}
+.author:hover {
+  background-color: #f2f2f2;
+}
+
+.result {
+  font-weight: 800;
+
+  margin-top: 25px;
+
+  color: rgb(15, 14, 14);
+}
