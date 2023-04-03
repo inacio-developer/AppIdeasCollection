@@ -45,6 +45,7 @@ main {
 }
 
 .container {
+  min-width: min-content;
   width: 500px;
 
   display: flex;
@@ -191,4 +192,12 @@ footer p {
   margin-top: 25px;
 
   color: rgb(15, 14, 14);
+}
+
+.toRevel {
+  font-size: 35px;
+
+  color: #f2f2f2;
+
+  transition: 0.5s;
 }
