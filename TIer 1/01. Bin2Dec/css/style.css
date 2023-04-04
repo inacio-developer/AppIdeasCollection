@@ -149,7 +149,7 @@ input[type="text"] {
 
   border: 1.5px solid #f2f2f2;
 
-  padding-left: 10px;
+  padding: 0 10px;
 
   margin-top: 25px;
 }
@@ -200,4 +200,113 @@ footer p {
   color: #f2f2f2;
 
   transition: 0.5s;
+}
+
+.icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon svg {
+  margin-top: 1px;
+  width: 30px;
+  height: 30px;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(15, 14, 14, 0.2),
+    rgb(45, 45, 45, 0.2)
+  );
+
+  transition: 0.3s;
+
+  cursor: pointer;
+}
+
+[data-copy] {
+  padding: 3px;
+
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.icon [data-copy]:hover {
+  fill: #0f0e0e;
+
+  background-color: #058a12;
+}
+
+[data-clean] {
+  display: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.icon [data-clean]:hover {
+  fill: #0f0e0e;
+
+  background-color: #bb1f24;
+}
+
+.notification {
+  display: none;
+
+  position: absolute;
+
+  top: 80%;
+
+  min-width: 300px;
+
+  padding: 8px 20px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+.content-paste {
+  color: #bb1f24;
+  font-weight: 800;
+}
+
+.paste-invalid {
+  background-image: linear-gradient(
+    to right,
+    rgb(187, 31, 36, 0.2),
+    rgb(187, 31, 36, 0.1)
+  );
+}
+
+.paste-okay {
+  font-weight: 800;
+
+  color: #05640f;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(5, 138, 18, 0.2),
+    rgb(5, 138, 18, 0.1)
+  );
+}
+
+.paste-okay:before {
+  content: "✔";
+
+  color: #05640f;
+
+  font-size: 15px;
+
+  margin-right: 4px;
+}
+
+.paste-invalid:before {
+  content: "❌";
+
+  font-size: 8px;
+
+  margin-right: 4px;
 }

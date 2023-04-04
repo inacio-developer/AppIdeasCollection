@@ -1,4 +1,4 @@
-import Validate from "./validateInput.js";
+import ShowResult from "./showResult.js";
 
 export default class ConvertBinary {
   constructor(value) {
@@ -8,16 +8,16 @@ export default class ConvertBinary {
   converter() {
     const amountNumb = this.value.length - 1;
 
-    let expo = 0;
-    let result = 0;
+    let expo = 0,
+      result = 0;
 
     for (let i = amountNumb; i >= 0; i--) {
       let calc = /* prettier-ignore */ (this.value[i] * 2**expo++) + result;
       result = calc;
     }
 
-    const validate = new Validate();
-    return validate.resultValidate(result);
+    const showResult = new ShowResult(result);
+    showResult.init();
   }
 
   init() {

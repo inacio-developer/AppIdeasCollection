@@ -1,59 +1,56 @@
 import ConvertBinary from "./convertBinary.js";
+import Entry from "./entry.js";
 
 export default class Validate {
   constructor() {
     this.input = document.querySelector("[data-input]");
     this.feedback = document.querySelector(".msg-feedback");
+    this.result = document.querySelector(".result");
   }
 
-  resultValidate(value) {
-    const textResult = document.querySelector(".result");
+  validate() {
+    const checkout = this.feedback.classList.contains("msg-erro");
 
-    textResult.classList.add("toRevel");
+    if (checkout) this.feedback.classList.remove("msg-erro");
 
-    if (this.input.value === "" && textResult.classList.contains("toRevel")) {
-      textResult.classList.remove("toRevel");
-      textResult.innerText = "☝ Enter a valid binary number...";
-    } else textResult.innerText = value;
+    this.feedback.style.display = "flex";
+    this.feedback.innerText = "successfully generated decimal";
+    this.feedback.classList.add("msg-validate");
+
+    const convertBinary = new ConvertBinary(this.input.value);
+
+    convertBinary.init();
   }
 
+  erro(match) {
+    this.feedback.classList.add("msg-erro");
+    this.feedback.style.display = "flex";
+
+    if (match.length < 10) {
+      this.feedback.innerText = `the characters: ${match.toString()} are not allowed. Only 0 or 1`;
+    } else {
+      this.feedback.innerText = `Only 0 or 1`;
+    }
+  }
   feedbackValue() {
     const value = this.input.value;
     const deniedNumb = /[^01]/g;
     const matches = value.match(deniedNumb);
-
-    let feedback = this.feedback;
+    const entry = new Entry();
 
     if (value !== "") {
-      if (!matches) {
-        const checkout = feedback.classList.contains("msg-erro");
+      entry.display("flex");
 
-        if (checkout) feedback.classList.remove("msg-erro");
-
-        feedback.style.display = "flex";
-        feedback.innerText = "successfully generated decimal";
-        feedback.classList.add("msg-validate");
-
-        const convertBinary = new ConvertBinary(value);
-
-        return convertBinary.init();
-      }
-
-      if (matches) {
-        feedback.classList.add("msg-erro");
-        feedback.style.display = "flex";
-
-        if (matches.length < 10) {
-          feedback.innerText = `the characters: ${matches.toString()} are not allowed. Only 0 or 1`;
-        } else {
-          feedback.innerText = `Only 0 or 1`;
-        }
-      }
+      if (!matches) this.validate();
+      if (matches) this.erro(matches);
     } else {
-      feedback.style.display = "none";
-    }
+      this.feedback.style.display = "none";
 
-    if (!matches) this.resultValidate();
+      entry.display("none");
+
+      this.result.classList.remove("toRevel");
+      this.result.innerText = "☝ Enter a valid binary number...";
+    }
   }
 
   addEvent() {
