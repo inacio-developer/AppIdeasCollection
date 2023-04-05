@@ -1,5 +1,7 @@
 # 📚 AppIdeasCollection
+
 Projects based on <a href="https://github.com/florinpop17/app-ideas">App Ideas</a> by <a href="https://github.com/florinpop17">Florin Pop</a>
+
 <hr>
 <h3>
 Tier-1: Beginner Projects

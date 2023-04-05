@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "ubuntu";
+
+  background-color: #efd81d;
+}
+header {
+  height: 20%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-page {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+}
+
+.title-page h1 {
+  display: inline;
+
+  color: #efd81d;
+
+  -webkit-text-stroke: 1.3px rgb(124, 112, 15);
+
+  letter-spacing: 2px;
+}
+
+img {
+  width: 60px;
+}
+
+main {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.projects {
+  width: 90%;
+  height: 100%;
+
+  background-color: #b7b3b3;
+
+  padding: 48px 50px;
+
+  border-radius: 8px 8px 0px 0px;
+}
+
+.past {
+  display: flex;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  min-width: 140px;
+  min-height: 48px;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 0px 15px;
+
+  text-decoration: none;
+
+  color: #3d3c3c;
+
+  background-color: #b0aeae;
+
+  border-radius: 5px;
+}
+
+a:before {
+  content: "↥";
+
+  margin-right: 8px;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #737373;
+
+  transition: 0.5s;
+}
