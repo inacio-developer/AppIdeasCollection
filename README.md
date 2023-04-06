@@ -1,4 +1,5 @@
 # 📚 AppIdeasCollection
+Access the main <a target="blank_" href="https://sartori-dev.github.io/AppIdeasCollection/">page</a> of the project: <a target="blank_" href="https://sartori-dev.github.io/AppIdeasCollection/">here</a>
 
 Projects based on <a href="https://github.com/florinpop17/app-ideas">App Ideas</a> by <a href="https://github.com/florinpop17">Florin Pop</a>
 
@@ -15,6 +16,6 @@ Tier-1: Beginner Projects
 <tr>
 <td>Bin2Dec</td>	
 <td>Binary-to-Decimal number converter</td>	
-<td>unavailable</td>
+<td><a target="blank_" href="https://sartori-dev.github.io/AppIdeasCollection/TIer%201/01.%20Bin2Dec/">Click here</a></td>
 </tr>
 </table>
