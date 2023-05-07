@@ -5,7 +5,6 @@ export default class Validate {
   constructor() {
     this.input = document.querySelector("[data-input]");
     this.feedback = document.querySelector(".msg-feedback");
-    this.result = document.querySelector(".result");
   }
 
   validate() {
@@ -48,8 +47,10 @@ export default class Validate {
 
       entry.display("none");
 
-      this.result.classList.remove("toRevel");
-      this.result.innerText = "☝ Enter a valid binary number...";
+      const result = document.querySelector(".result");
+
+      result.classList.remove("toRevel");
+      result.innerText = "☝ Enter a valid binary number...";
     }
   }
 

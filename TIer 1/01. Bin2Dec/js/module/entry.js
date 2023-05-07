@@ -5,6 +5,7 @@ export default class Entry {
     this.input = document.querySelector("[data-input]");
     this.pasted = document.querySelector("[data-copy]");
     this.clean = document.querySelector("[data-clean]");
+
     this.validate = new Validate();
   }
 
