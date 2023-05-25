@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>...</title>
+    <title>Border-Radius</title>
 </head>
 
 <body>
@@ -13,16 +13,13 @@
         <header>
             <section class="title-page">
                 <div class="title">
-                    <svg fill="#6c6a6a" width="41px" height="41px" viewBox="0 0 32 32" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" stroke="#d1c7c7">
+                    <svg fill="#6c6a6a" width="41px" height="41px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#d1c7c7">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#6c6a6a"
-                            stroke-width="0.64">
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#6c6a6a" stroke-width="0.64">
                         </g>
                         <g id="SVGRepo_iconCarrier">
                             <title>square</title>
-                            <path
-                                d="M28 24v4h-4v-1h-16v1h-4v-4h1v-16h-1v-4h4v1h16v-1h4v4h-1v16h1zM5 27h2v-2h-2v2zM7 5h-2v2h2v-2zM24 7h-16v1h-1v16h1v1h16v-1h1v-16h-1v-1zM27 5h-2v2h2v-2zM25 25v2h2v-2h-2z">
+                            <path d="M28 24v4h-4v-1h-16v1h-4v-4h1v-16h-1v-4h4v1h16v-1h4v4h-1v16h1zM5 27h2v-2h-2v2zM7 5h-2v2h2v-2zM24 7h-16v1h-1v16h1v1h16v-1h1v-16h-1v-1zM27 5h-2v2h2v-2zM25 25v2h2v-2h-2z">
                             </path>
                         </g>
                     </svg>
@@ -37,63 +34,77 @@
         </header>
         <nav>
             <ul>
-                <div class="check"><span id="check-option">✓</span></div>
-                <li>Vertical</li>
-                <div class="check"><span id="check-option">✓</span></div>
+                <div class="active-check check" data-value="Y">
+                    <span id="check-option">✓</span>
+                </div>
+                <li class="active">Vertical</li>
+                <div class="check" data-value="X">
+                    <span id="check-option">✓</span>
+                </div>
                 <li>Horizontal</li>
             </ul>
         </nav>
         <main>
-            <div class=" border-radius-configs">
-                <div class="square square-left">L</div>
-                <div class="square square-top">T</div>
-                <div class="square square-bottom">B</div>
-                <div class="square square-right">R</div>
+            <div class="border-radius-configs">
+                <div class="square effect" data-line="bottom">BL</div>
+                <div class="square effect" data-line="left">TL</div>
+                <div class="square effect" data-line="right">TR</div>
+                <div class="square effect" data-line="top">BR</div>
                 <div class="border-radius-edit">
                     <div class="ajusts">
-                        <div class="copy"><svg fill="#abb2bf" height="18px" width="18px" version="1.1" id="Layer_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 442 442" xml:space="preserve" stroke="#ffffff">
+                        <div class="icons">
+                            <svg class="copy" fill="#abb2bf" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 442 442" xml:space="preserve" stroke="#ffffff">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
                                     <g>
                                         <polygon points="291,0 51,0 51,332 121,332 121,80 291,80 "></polygon>
                                         <polygon points="306,125 306,195 376,195 "></polygon>
-                                        <polygon points="276,225 276,110 151,110 151,442 391,442 391,225 "></polygon>
+                                        <polygon points="276,225 276,110 151,110 151,442 391,442 391,225 ">
+                                        </polygon>
                                     </g>
                                 </g>
-                            </svg></div>
+                            </svg>
+                            <svg title="reset" class="reset" width="22px" height="22px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#abb2bf">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <title>reset</title>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="Combined-Shape" fill="#abb2bf" transform=" translate(74.806872, 64.000000)">
+                                            <path d="M351.859794,42.6666667 L351.859794,85.3333333 L283.193855,85.3303853 C319.271288,116.988529 341.381875,163.321355 341.339886,213.803851 C341.27474,291.98295 288.098183,360.121539 212.277591,379.179704 C136.456999,398.237869 57.3818117,363.341907 20.3580507,294.485411 C-16.6657103,225.628916 -2.17003698,140.420413 55.5397943,87.68 C63.6931909,100.652227 75.1888658,111.189929 88.8197943,118.186667 C59.4998648,141.873553 42.4797783,177.560832 42.5264609,215.253333 C43.5757012,285.194843 100.577082,341.341203 170.526461,341.333333 C234.598174,342.388718 289.235113,295.138227 297.4321,231.584253 C303.556287,184.101393 282.297007,138.84385 245.195596,112.637083 L245.193128,192 L202.526461,192 L202.526461,42.6666667 L351.859794,42.6666667 Z M127.859794,-1.42108547e-14 C151.423944,-1.42108547e-14 170.526461,19.1025173 170.526461,42.6666667 C170.526461,66.230816 151.423944,85.3333333 127.859794,85.3333333 C104.295645,85.3333333 85.1931276,66.230816 85.1931276,42.6666667 C85.1931276,19.1025173 104.295645,-1.42108547e-14 127.859794,-1.42108547e-14 Z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
                         <span class="symbols">{</span>
                         <div class="command-css">
-                            <span class="command">border-top-left-radius<span class="symbols">:</span></span><span
-                                class="value"> 4px / 4px</span><span class="symbols">;</span>
+                            <span class="command">border-top-left-radius<span class="symbols">:</span></span><span class="left-y left"> 0%</span><span class="left-x left">
+                                0%</span></span><span class="symbols">;</span>
                         </div>
                         <div class="command-css">
-                            <span class="command">border-top-right-radius<span class="symbols">:</span></span><span
-                                class="value"> 4px / 4px</span><span class="symbols">;</span>
+                            <span class="command">border-top-right-radius<span class="symbols">:</span></span><span class="right-y right"> 0%</span><span class="right-x right"> 0%</span><span class="symbols">;</span>
                         </div>
                         <div class="command-css">
-                            <span class="command">border-top-left-radius<span class="symbols">:</span></span><span
-                                class="value"> 4px / 4px</span><span class="symbols">;</span>
+                            <span class="command">border-bottom-left-radius<span class="symbols">:</span></span><span class="bottom-y bottom"> 0%</span><span class="bottom-x bottom"> 0%</span><span class="symbols">;</span>
                         </div>
                         <div class="command-css">
-                            <span class="command">border-bottom-left-radius<span class="symbols">:</span></span><span
-                                class="value"> 4px / 4px</span><span class="symbols">;</span>
+                            <span class="command">border-bottom-right-radius<span class="symbols">:</span></span><span class="top-y top"> 0%</span><span class="top-x top"> 0%</span><span class="symbols">;</span>
                         </div>
                         <span class="symbols">}</span>
                     </div>
                     <div class="confirm-copy">✓ Successfully copied!</div>
                 </div>
-            </div>
         </main>
         <footer>
-            <span>Made by Rafael <a target="_blank" href="#" class="surname">
+            <span>Made by Rafael <a target="_blank" href="https://github.com/sartori-dev" class="surname">
                     Sartori
                 </a></span>
         </footer>
     </section>
-    <script src="script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
