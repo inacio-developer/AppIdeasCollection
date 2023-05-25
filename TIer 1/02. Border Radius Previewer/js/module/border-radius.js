@@ -35,7 +35,6 @@ export default class BorderRadius {
   }
 
   // Event handling methods
-
   copied() {
     const msg = document.querySelector('.confirm-copy');
 
@@ -46,6 +45,13 @@ export default class BorderRadius {
     setTimeout(() => (msg.style.display = 'none'), 4000);
   }
 
+  resetConfigs() {
+    this.resetSquared();
+    this.resetPos();
+    this.resetBorder();
+    this.borderEdit();
+  }
+
   loadPage() {
     this.keys = Object.keys(this.borderRadius.Y);
     this.chose();
@@ -53,6 +59,7 @@ export default class BorderRadius {
     this.borderEdit();
     this.squarePosition();
   }
+
   axis(option, index) {
     option.preventDefault();
     this.activeSide(index);
@@ -91,38 +98,6 @@ export default class BorderRadius {
     document.addEventListener('mousemove', this.current);
   }
 
-  storageClear() {
-    localStorage.removeItem(this.side + this.XorY);
-    localStorage.removeItem('move-' + this.side + this.XorY);
-    // this.xory
-    // keys
-  }
-
-  resetBorder() {
-    const borderKeys = Object.keys(this.borderRadius[this.XorY]);
-    borderKeys.forEach((key) => {
-      this.borderRadius[this.XorY][key] = 0;
-      this.side = key;
-      this['border' + this.XorY]();
-      this.storageClear();
-    });
-  }
-
-  resetPos() {
-    this.keys.forEach((key) => (this.movements[key]['end' + this.XorY] = 0));
-  }
-
-  resetSquared() {
-    this.square.forEach((square) => (square.style[square.dataset.line] = '0%'));
-  }
-
-  resetConfigs() {
-    this.resetSquared();
-    this.resetPos();
-    this.resetBorder();
-    this.borderEdit();
-  }
-
   addEvents() {
     this.sideCheck.forEach((check, index) =>
       check.addEventListener('click', (click) => this.axis(click, index)),
@@ -132,15 +107,31 @@ export default class BorderRadius {
       square.addEventListener('mousedown', this.begin);
     });
 
+    document.addEventListener('mouseup', this.end);
+
     this.copy.addEventListener('click', this.copied);
     this.reset.addEventListener('click', this.resetConfigs);
-
-    document.addEventListener('mouseup', this.end);
 
     window.addEventListener('load', this.loadPage);
   }
 
   // DOM manipulation methods
+
+  resetBorder() {
+    const borderKeys = Object.keys(this.borderRadius[this.XorY]);
+    borderKeys.forEach((key) => {
+      this.side = key;
+
+      this.borderRadius[this.XorY][key] = 0;
+      this['border' + this.XorY]();
+
+      this.storageClear();
+    });
+  }
+
+  resetSquared() {
+    this.square.forEach((square) => (square.style[square.dataset.line] = '0%'));
+  }
 
   ElementColor(boolean) {
     let isTrue = boolean;
@@ -219,9 +210,6 @@ export default class BorderRadius {
     this.movements['upEnd' + this.XorY] =
       +this.movements[this.side]['end' + this.XorY] + this.movements.current;
 
-    console.log(this.movements);
-    console.log('a posição atual é:', this.XorY);
-
     this.borderRadius[this.XorY][this.side] = this.percentage(
       this.movements['upEnd' + this.XorY],
     );
@@ -291,6 +279,14 @@ export default class BorderRadius {
   }
 
   // Auxiliary methods
+  storageClear() {
+    localStorage.removeItem(this.side + this.XorY);
+    localStorage.removeItem('move-' + this.side + this.XorY);
+  }
+
+  resetPos() {
+    this.keys.forEach((key) => (this.movements[key]['end' + this.XorY] = 0));
+  }
 
   elementIsSide(move) {
     switch (this.side) {
