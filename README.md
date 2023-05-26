@@ -18,4 +18,9 @@ Tier-1: Beginner Projects
 <td>Binary-to-Decimal number converter</td>	
 <td><a target="blank_" href="https://sartori-dev.github.io/AppIdeasCollection/TIer%201/01.%20Bin2Dec/">Click here</a></td>
 </tr>
+  <tr>
+<td>Border Radius Previewer</td>	
+<td>Preview how CSS3 border-radius values affect an element</td>	
+<td><a target="blank_" href="https://sartori-dev.github.io/AppIdeasCollection/TIer%201/02.%20Border%20Radius%20Previewer/">Click here</a></td>
+</tr>
 </table>
